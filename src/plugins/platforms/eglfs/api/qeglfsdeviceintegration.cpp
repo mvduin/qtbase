@@ -243,11 +243,13 @@ Qt::ScreenOrientation QEglFSDeviceIntegration::orientation() const
 
 int QEglFSDeviceIntegration::screenDepth() const
 {
+    // XXX
     return q_screenDepthFromFb(framebuffer);
 }
 
 QImage::Format QEglFSDeviceIntegration::screenFormat() const
 {
+    // XXX
     return screenDepth() == 16 ? QImage::Format_RGB16 : QImage::Format_RGB32;
 }
 

@@ -102,6 +102,7 @@ QSurfaceFormat QEglFSKmsIntegration::surfaceFormatFor(const QSurfaceFormat &inpu
     QSurfaceFormat format(inputFormat);
     format.setRenderableType(QSurfaceFormat::OpenGLES);
     format.setSwapBehavior(QSurfaceFormat::DoubleBuffer);
+    // XXX
     format.setRedBufferSize(8);
     format.setGreenBufferSize(8);
     format.setBlueBufferSize(8);
