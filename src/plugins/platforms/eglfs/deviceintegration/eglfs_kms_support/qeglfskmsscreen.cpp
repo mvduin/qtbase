@@ -108,12 +108,12 @@ QRect QEglFSKmsScreen::geometry() const
 
 int QEglFSKmsScreen::depth() const
 {
-    return 32;
+    return 16;
 }
 
 QImage::Format QEglFSKmsScreen::format() const
 {
-    return QImage::Format_RGB32;
+    return QImage::Format_RGB16;
 }
 
 QSizeF QEglFSKmsScreen::physicalSize() const

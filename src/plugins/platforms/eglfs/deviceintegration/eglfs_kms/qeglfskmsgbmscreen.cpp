@@ -80,7 +80,7 @@ QEglFSKmsGbmScreen::FrameBuffer *QEglFSKmsGbmScreen::framebufferForBufferObject(
 
     QScopedPointer<FrameBuffer> fb(new FrameBuffer);
 
-    int ret = drmModeAddFB(device()->fd(), width, height, 24, 32,
+    int ret = drmModeAddFB(device()->fd(), width, height, 16, 16,
                            stride, handle, &fb->fb);
 
     if (ret) {
@@ -132,7 +132,7 @@ gbm_surface *QEglFSKmsGbmScreen::createSurface()
         m_gbm_surface = gbm_surface_create(static_cast<QEglFSKmsGbmDevice *>(device())->gbmDevice(),
                                            geometry().width(),
                                            geometry().height(),
-                                           GBM_FORMAT_XRGB8888,
+                                           GBM_FORMAT_RGB565,
                                            GBM_BO_USE_SCANOUT | GBM_BO_USE_RENDERING);
     }
     return m_gbm_surface;
